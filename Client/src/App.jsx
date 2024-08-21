@@ -11,12 +11,15 @@ export default function App() {
   return (
     <BrowserRouter>
       {/* navebar */}
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/sign-in' element={<SignIn />} />
+          <Route path='/sing up' element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );
+
 }

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import '../index.css'
 
+// navebar principal 
 export default function Header() {
   return (
     <div className='bg-slate-200'>
