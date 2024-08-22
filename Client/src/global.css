@@ -13,3 +13,9 @@
     --dark-color: #2B333E;
     --light-color: #FCFCFC;
 }
+
+a{
+    color: rgba(0, 0, 0, 0.664);
+    text-decoration: none;
+
+}
