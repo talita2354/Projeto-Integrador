@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './Pages/Home';
-import About from './Pages/About';
-import SignIn from './Pages/SignIn';
-import SignUp from './Pages/SignUp';
-import Profile from './Pages/Profile';
+import Home from './Components/Pages/Home';
+import About from './Components/Pages/About';
+import SignIn from './Components/Pages/SignIn';
+import SignUp from './Components/Pages/SignUp';
+import Profile from './Components/Pages/Profile';
+import './global.css';
 import Header from './Components/Header';
 
 
