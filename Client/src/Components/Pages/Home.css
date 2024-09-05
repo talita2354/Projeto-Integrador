@@ -1,0 +1,208 @@
+/* Reset de margens e preenchimentos para todos os elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos gerais do corpo */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+/* Estilos para a navbar fixa */
+.fixed-navbar {
+  position: fixed; /* Fixa no topo da página */
+  top: 0;
+  width: 100%;
+  background-color: rgb(67, 67, 67);
+  z-index: 1000; /* Coloca a navbar acima de outros elementos */
+  transition: background-color 0.3s ease;
+}
+
+/* Adiciona espaço extra no topo das seções para compensar a navbar fixa */
+.sections-container > section {
+  padding-top: 70px; /* Ajuste conforme a altura da navbar */
+}
+
+/* Container da navbar */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+/* Estilos para o logo */
+.logo {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Links de navegação */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Estilos dos links e botões */
+.nav-link,
+.signup-button {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  background-color: #6962AD;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito hover para os links */
+.nav-link:hover,
+.signup-button:hover {
+  background-color: #5751a3;
+}
+
+/* Seção Hero */
+.fullscreen-hero {
+  background-image: url('../img/fundo1.jpg'); /* Verifique o caminho da imagem */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+  width: 100%;
+  padding: 5rem 2rem; /* Ajuste conforme necessário */
+  min-height: 100vh; /* Garante que a seção ocupe pelo menos a altura total da viewport */
+  padding-top: 70px; /* Ajuste conforme a altura da navbar */
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7); /* Transparência para mostrar a imagem de fundo */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  z-index: 1; /* Garante que esteja acima do fundo e abaixo do conteúdo */
+}
+
+.hero-content {
+  z-index: 1;
+  max-width: 600px;
+}
+
+/* Botão de chamada para ação */
+.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  background-color: #6962AD;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Efeito hover para o botão */
+.cta-button:hover {
+  background-color: #5751a3;
+}
+
+/* Seção de Features */
+.features-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.features-container {
+  max-width: 100%;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2s ease-out, transform 1s ease-out;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Grid para as features */
+.features-grid {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Item individual de feature */
+.feature-item {
+  flex: 1;
+  background-color: #0c0c0c;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.39);
+}
+
+/* Seção Sobre */
+.about-section {
+  width: 100%;
+  background-color: #6962AD;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Seção de Cadastro */
+.signup-section {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Botão de chamada para ação na seção de cadastro */
+.signup-container .cta-button {
+  background-color: #fff;
+  color: #6962AD;
+}
+
+.signup-container .cta-button:hover {
+  background-color: #f4f4f4;
+}
+
+/* Footer Minimalista */
+footer {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* Animação para as features */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.features-section.in-view .features-container {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -10,7 +10,7 @@ body {
     align-items: center;
 }
 
-.login-container {
+.register-container {
     background: #fff;
     padding: 31px;
     border-radius: 10px;
@@ -18,10 +18,10 @@ body {
     width: 100%;
     max-width: 400px;
     text-align: center;
-    margin-right: 0;
+    margin-right: 55px;
 }
 
-.login-container h1 {
+.register-container h1 {
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
@@ -35,7 +35,7 @@ body {
     
   }
   
-  .login-container input {
+  .register-container input {
     width: 100%;
     padding: 10px;
     border: 1px solid #0000001a;
@@ -46,15 +46,15 @@ body {
     
   }
   
-  .login-container input:focus {
+  .register-container input:focus {
     outline: none;
     border-color: rgba(41, 41, 41, 0.39);
     box-shadow: 0 0 5px rgba(137, 137, 138, 0.5);
    
   }
   
-  .login-container input:focus + label,
-  .login-container input:not(:placeholder-shown) + label {
+  .register-container input:focus + label,
+  .register-container input:not(:placeholder-shown) + label {
     top: -9px;
     left: 9px;
     font-size: 0.75rem;
@@ -64,7 +64,7 @@ body {
     transition: all 0.3s ease;
   }
   
-  .login-container label {
+  .register-container label {
     position: absolute;
     left: 12px;
     top: 50%;
@@ -75,11 +75,15 @@ body {
     color: #202020;
     pointer-events: none;
   }
-  .login-container [type="text"] {
+  .register-container [type="text"] {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #000000;
   }
-.login-container [type="password"] {
+.register-container [type="password"] {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #000000;
+}
+.register-container [type="email"] {
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #000000;
 }
@@ -104,7 +108,7 @@ body {
   color: #555;
 }
 
-  .entrar[type="submit"] {
+  .register[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #667eea;
@@ -116,11 +120,11 @@ body {
     outline: none; /* Remover borda ao clicar */
   }
   
-  .entrar-btn[type="submit"]:hover {
+  .register-btn[type="submit"]:hover {
     background-color: #764ba2;
   }
   
-.entrar-btn {
+.register-btn {
     width: 100%;
     padding: 10px;
     background: #667eea;
@@ -133,96 +137,61 @@ body {
     margin-bottom: 15px;
 }
 
-.entrar-btn :hover {
+.register-btn :hover {
     background: #764ba2;
 }
-.login-register-button {
-  margin-right: 6em;
-  font-weight: 400;
-  color: var(--darkBlue-color);
-  transition: all 0.3s ease;
-}
 
-.login-reset-button {
-  margin: 0 0 0 15px; 
-  font-size: 13px;
-  color: #999;
-  transition: all 0.3s ease;
-}
-
-.login-reset-button:hover{
-  color: #3f3f3f;
-}
-
-.error {
-  color: red;
-  font-size: 0.875rem;
-  margin-top: 5px;
-}
-
-/* Tablets e telas menores */
-@media (max-width: 768px) {
-  .login-container {
-    background: #fff;
-    padding: 31px;
-    border-radius: 10px;
-    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 250px;
-    text-align: center;
-    margin-right: 55px;
-
- 
-}
-.login-register-button {
-  margin-right: 1px;
-  font-size: 17px;
-  color: var(--darkBlue-color);
-  transition: all 0.3s ease;
-}
-
-.login-reset-button {
-  margin: 0 0 0 15px; 
-  font-size: 15px;
-  color: #999;
-  transition: all 0.3s ease;
-}
-
-.login-reset-button:hover{
-  color: #3f3f3f;
-}
+.password-container {
+    position: relative;
+  }
   
-}
+  .error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 5px;
+  }
+  @media (max-width: 768px) {
+    .register-container {
+      background: #fff;
+      padding: 31px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      margin-right: 0;
+  }
+  }
+  @media (max-width: 635px) {
+    .register-container {
+      background: #fff;
+      padding: 31px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 200px;
+      text-align: center;
+      margin-right: 0;
+  }
 
-@media (max-width: 685px) {
-  .login-container {
-    background: #fff;
-    padding: 31px;
-    border-radius: 10px;
-    box-shadow: 0 4px 1px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 250px;
-    text-align: center;
-    margin-right: 0;
-
- 
-}
-.login-register-button {
-  margin-right: 1px;
-  font-size: 17px;
-  color: var(--darkBlue-color);
-  transition: all 0.3s ease;
-}
-
-.login-reset-button {
-  margin: 0 0 0 15px; 
-  font-size: 15px;
-  color: #999;
-  transition: all 0.3s ease;
-}
-
-.login-reset-button:hover{
-  color: #3f3f3f;
-}
+  .show-password-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 1rem; /* Tamanho do ícone */
+    padding: 0;
+    outline: none; /* Remover borda ao clicar */
+    box-shadow: none; /* Remover qualquer sombra ao clicar */
   
-}
+  }
+  
+  .show-password-btn:hover {
+    color: #555;
+  }
+  }
+

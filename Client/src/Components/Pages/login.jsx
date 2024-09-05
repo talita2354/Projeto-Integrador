@@ -8,16 +8,42 @@ import './login.css';
 export default function SignIn() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // Adicione esta linha para controlar a visibilidade da senha.
+
+  const [errorMessage, setErrorMessage] = useState('');
+
+
+
+   // Mock de usuários (simula uma base de dados)
+   const users = [
+    { username: 'Talita1', password: 'Talita2222' },
+    { username: 'Talita2', password: 'Talita1111' },
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Adicione aqui a lógica de autenticação
-    console.log('Username:', username);
-    console.log('Password:', password);
+
+    // Verifica se o usuário existe
+    const user = users.find((user) => user.username === username);
+    if (!user) {
+      setErrorMessage('Usuário não encontrado.');
+      return;
+    }
+
+    // Verifica se a senha está correta
+    if (user.password !== password) {
+      setErrorMessage('Senha incorreta.');
+      return;
+    }
+
+    // Reseta a mensagem de erro se a autenticação for bem-sucedida
+    setErrorMessage('');
+    console.log('Login bem-sucedido');
+    // Adicione aqui a lógica de autenticação após sucesso
   };
 
-  const [showPassword, setShowPassword] = useState(false);  // Adicione esta linha para controlar a visibilidade da senha.
-
+ 
+    
   return (
     <div className="login-container">
       <h1>Login</h1>
@@ -54,7 +80,7 @@ export default function SignIn() {
        <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
   </button>
         </div>
-
+        {errorMessage && <p className="error">{errorMessage}</p>}
         <button className="entrar-btn" type="submit">Entrar</button>
         <a href='/register' className='login-register-button'>Cadastrar-se</a>
         <a href='/reset-password' className='login-reset-button'>Esqueceu a senha?</a>
