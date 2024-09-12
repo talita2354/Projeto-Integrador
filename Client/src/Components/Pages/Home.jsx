@@ -23,7 +23,7 @@ export default function Home() {
           <div className="logo">Dev Match</div>
           <nav className="nav-links">
             <a href="#about" className="nav-link">Sobre</a>
-            <a href="#about" className="nav-link">Entrar</a>
+            <a href="login" className="nav-link">Entrar</a>
             <a href="/register" className="nav-link signup-button">Cadastre-se</a>
           </nav>
         </div>
@@ -75,6 +75,9 @@ export default function Home() {
       <br />
       <br />
       <br />
+      <br />
+      <br />
+      <br />
 
       {/* Fullscreen Hero Section - Deve estar logo após o Navbar */}
       <section className="fullscreen-hero">
@@ -82,7 +85,7 @@ export default function Home() {
           <div className="hero-content">
             <h1>Conecte-se com Desenvolvedores de Alto Nível</h1>
             <p>Encontre talentos para impulsionar seu projeto.</p>
-            <a href="#signup" className="cta-button">Comece Agora</a>
+            <a href="/login" className="cta-button">Comece Agora</a>
           </div>
         </div>
       </section>
@@ -121,7 +124,7 @@ export default function Home() {
         <div className="signup-container">
           <h2>Cadastre-se Hoje</h2>
           <p>Junte-se à nossa comunidade e comece a encontrar os melhores talentos para o seu projeto.</p>
-          <a href="#signup-form" className="cta-button">Cadastre-se Agora</a>
+          <a href="/register" className="cta-button">Cadastre-se Agora</a>
         </div>
       </section>
 

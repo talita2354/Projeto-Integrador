@@ -1,0 +1,109 @@
+/* Estilo para a Navbar */
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2d2d2d;
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Container da navbar */
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  /* Estilos para o logo */
+  .logo {
+    color: #f7f7f7;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  /* Links de navegação */
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  /* Estilos dos links e botões */
+  .nav-link,
+  .signup-button {
+    color: #f7f7f7;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-link:hover,
+  .signup-button:hover {
+    background-color: #f7f7f7;
+    color: #2d2d2d;
+  }
+  
+  .signup-button {
+    background-color: #5c67f2;
+  }
+
+/* Estilo para o Formulário de Registro */
+.register-container {
+  margin-top: 80px; /* Para evitar que o formulário fique abaixo da navbar fixa */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px); /* Calcula a altura da tela menos a altura da navbar */
+}
+
+.register-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.ctad-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ctad-button:hover {
+  background-color: #0056b3;
+}
