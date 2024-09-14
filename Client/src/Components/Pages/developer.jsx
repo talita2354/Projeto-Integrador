@@ -42,8 +42,9 @@ export default function Developer() {
 
       {/* Formulário de Registro */}
       <div className="dregister-container">
+      
+        <form onSubmit={handleSubmit} className="dregister-form">
         <h2>Registrar como Desenvolvedor</h2>
-        <form onSubmit={handleSubmit} className="register-form">
           <label htmlFor="name">Nome:</label>
           <input
             type="text"
@@ -68,6 +69,7 @@ export default function Developer() {
 
           <label htmlFor="info">Informações Adicionais:</label>
           <textarea
+           type="info"
             id="info"
             name="info"
             value={formData.info}

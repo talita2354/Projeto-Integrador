@@ -115,7 +115,11 @@ export default function Home() {
       <section id="about" className="about-section">
         <div className="about-container">
           <h2>Sobre Nós</h2>
-          <p>Dev Match é uma plataforma dedicada a conectar empresas com desenvolvedores excepcionais, facilitando a criação de projetos de alta qualidade.</p>
+          <p>A Dev Match é uma plataforma inovadora e focada em criar conexões significativas entre empresas e desenvolvedores talentosos. Nossa missão é simplificar o processo de recrutamento, tornando mais fácil para empresas de todos os tamanhos encontrarem os profissionais certos para cada projeto.
+
+<br /><br />Vivemos em uma era de inovação tecnológica, onde o sucesso de uma empresa muitas vezes depende da qualidade de seu time de desenvolvimento. Sabemos que encontrar o desenvolvedor ideal, com o conjunto de habilidades certo e que se alinhe com os objetivos e cultura da empresa, pode ser um grande desafio. Foi exatamente para resolver essa dor que a Dev Match foi criada.
+<br /><br /> A Dev Match conta com uma dinâmica simples: você pode se registrar como desenvolvedor ou cadastrar um projeto. Nas páginas da plataforma, você poderá buscar exatamente o que procura. Se houver um match entre o desenvolvedor e o projeto, você terá acesso ao contato para iniciar a comunicação.
+</p>
         </div>
       </section>
 

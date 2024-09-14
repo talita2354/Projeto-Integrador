@@ -11,10 +11,10 @@ body {
 }
 
 .register-container {
-    background: #fff;
+    background: #ffffff42;
     padding: 31px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.445);
     width: 100%;
     max-width: 400px;
     text-align: center;
@@ -36,13 +36,13 @@ body {
   }
   
   .register-container input {
-    width: 100%;
+    width: 106%;
     padding: 10px;
     border: 1px solid #0000001a;
     border-radius: 4px;
     transition: all 0.3s ease;
     font-size: 1rem;
-    background-color: rgba(206, 202, 191, 0.692);
+    background-color: rgba(206, 202, 191, 0.582);
     
   }
   

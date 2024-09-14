@@ -80,6 +80,7 @@ body {
   padding: 70px 2rem 2rem; /* Inclui padding-top para a navbar fixa */
   position: relative;
   margin-top:105px ;
+  top: 65px;
 }
 
 .overlay {
@@ -122,11 +123,16 @@ body {
   padding: 4rem 2rem;
   text-align: center;
   background-color: #fff;
+  ;
 }
 
+.features-container h2{
+  margin-top: 15px;
+}
 .features-container {
   max-width: 100%;
   margin: 0 auto;
+  
   transition: opacity 2s ease-out, transform 1s ease-out;
 }
 

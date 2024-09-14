@@ -50,22 +50,22 @@ export default function Dashboard() {
       {/* Seção de Projetos Disponíveis */}
       <section id="projects" className="projects-section">
         <div className="projects-container">
-          <h2>Projetos Disponíveis</h2>
+          <h2>Desenvolvedores</h2>
           <div className="projects-grid">
             <div className="project-card">
               <h3>Plataforma de E-commerce</h3>
               <p>Projeto de desenvolvimento full-stack para uma startup de e-commerce. Tecnologias: React, Node.js, MongoDB.</p>
-              <a href="/project/1" className="project-link">Ver Detalhes</a>
+            
             </div>
             <div className="project-card">
               <h3>Aplicativo Mobile de Saúde</h3>
               <p>Desenvolva uma aplicação mobile para monitoramento de atividades físicas. Tecnologias: Flutter, Firebase.</p>
-              <a href="/project/2" className="project-link">Ver Detalhes</a>
+            
             </div>
             <div className="project-card">
               <h3>Sistema de Gestão Financeira</h3>
               <p>Projeto de backend para um sistema financeiro. Tecnologias: Java, Spring Boot, MySQL.</p>
-              <a href="/project/3" className="project-link">Ver Detalhes</a>
+              
             </div>
           </div>
         </div>
