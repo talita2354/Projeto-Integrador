@@ -22,10 +22,12 @@ exports.register = async (req, res) => {
 };
 exports.login = async (req, res) => {
   try {
+    
     const { username, password } = req.body;
     const user = await User.findOne({ where: { username } });
-
+    
     if (user && await bcrypt.compare(password, user.password)) {
+      console.log(user);
       const token = jwt.sign({ id: user.id, name: user.username, master: user.master }, process.env.JWT_SECRET, { expiresIn: '1h' });
       res.json({ user: { id: user.id, username: user.username, email: user.email, master: user.master }, token });
     } else {

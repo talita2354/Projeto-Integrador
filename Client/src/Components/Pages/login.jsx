@@ -2,48 +2,60 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import './login.css';
-
-
+import { useNavigate } from 'react-router-dom';
+import { Login } from '../../services/authService';
+import Swal from 'sweetalert2';
 
 export default function SignIn() {
+  const [showPassword, setShowPassword] = useState(false); // Adicione esta linha para controlar a visibilidade da senha.
+  const [errorMessage, setErrorMessage] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // Adicione esta linha para controlar a visibilidade da senha.
+  const navigate = useNavigate(); // Hook para navigação
 
-  const [errorMessage, setErrorMessage] = useState('');
-
-
-
-   // Mock de usuários (simula uma base de dados)
-   const users = [
-    { username: 'Talita1', password: 'Talita2222' },
-    { username: 'Talita2', password: 'Talita1111' },
-  ];
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Verifica se o usuário existe
-    const user = users.find((user) => user.username === username);
-    if (!user) {
-      setErrorMessage('Usuário não encontrado.');
-      return;
+    try {
+      await Login(username, password);
+      Swal.fire('Sucesso', 'Login feito com sucesso!', 'success');
+      navigate('/dashboard');
+    } catch (error) {
+      Swal.fire('Erro', 'Erro ao fazer login', 'error');
     }
-
-    // Verifica se a senha está correta
-    if (user.password !== password) {
-      setErrorMessage('Senha incorreta.');
-      return;
-    }
-
-    // Reseta a mensagem de erro se a autenticação for bem-sucedida
-    setErrorMessage('');
-    console.log('Login bem-sucedido');
-    // Adicione aqui a lógica de autenticação após sucesso
   };
 
- 
-    
+
+
+  // Mock de usuários (simula uma base de dados)
+  // const users = [
+  //   { username: 'Talita1', password: 'Talita2222' },
+  //   { username: 'Talita2', password: 'Talita1111' },
+  // ];
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   // Verifica se o usuário existe
+  //   const user = users.find((user) => user.username === username);
+  //   if (!user) {
+  //     setErrorMessage('Usuário não encontrado.');
+  //     return;
+  //   }
+
+  //   // Verifica se a senha está correta
+  //   if (user.password !== password) {
+  //     setErrorMessage('Senha incorreta.');
+  //     return;
+  //   }
+
+  //   // Reseta a mensagem de erro se a autenticação for bem-sucedida
+  //   setErrorMessage('');
+  //   console.log('Login bem-sucedido');
+  //   // Adicione aqui a lógica de autenticação após sucesso
+  // };
+
+
+
   return (
     <div className="login-container">
       <h1>Login</h1>
@@ -63,7 +75,7 @@ export default function SignIn() {
 
         <div className="input-group">
           <input
-          type={showPassword ? "text" : "password"}
+            type={showPassword ? "text" : "password"}
             id="password"
             name="password"
             placeholder=" "
@@ -73,12 +85,12 @@ export default function SignIn() {
           />
           <label htmlFor="password">Senha</label>
           <button
-               type="button"
-               className="show-password-btn"
-               onClick={() => setShowPassword(!showPassword)}  // Alteração: Alterna o estado showPassword.
-               >
-       <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
-  </button>
+            type="button"
+            className="show-password-btn"
+            // onClick={() => setShowPassword(!showPassword)}  // Alteração: Alterna o estado showPassword.
+          >
+            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+          </button>
         </div>
         {errorMessage && <p className="error">{errorMessage}</p>}
         <button className="entrar-btn" type="submit">Entrar</button>
