@@ -209,3 +209,210 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* telas menores*/
+@media (max-width: 768px) {
+  .features-container h2{
+    margin-top: 29px;
+  }
+
+}
+
+@media (max-width: 758px) {
+  .features-container h2{
+    margin-top: 56px;
+  }
+.fullscreen-hero {
+  min-height: 100vh;
+  background-image:url('../img/fundo1.jpg') ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 70px 2rem 2rem; /* Inclui padding-top para a navbar fixa */
+  position: relative;
+  margin-top:105px ;
+  top: 65px;
+}
+
+}
+
+@media (max-width: 749px) {
+
+ 
+  .feature-item {
+    flex: 1;
+    background-color:#5c67f2;
+    padding: 1rem;
+    border-radius: 12px;
+    color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .fullscreen-hero {
+    min-height: 100vh;
+    background-image:url('../img/fundo1.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 70px 2rem 2rem; /* Inclui padding-top para a navbar fixa */
+    position: relative;
+    margin-top:105px ;
+    top: 95px;
+  }
+
+
+}
+
+@media (max-width: 726px) {
+
+  .fullscreen-hero {
+    min-height: 100vh;
+    background-image:url('../img/fundo1.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 70px 2rem 2rem; /* Inclui padding-top para a navbar fixa */
+    position: relative;
+    margin-top:105px ;
+    top: 95px;
+  }
+
+  .feature-item {
+    flex: 1;
+    background-color:#5c67f2;
+    padding: 1rem;
+    border-radius: 12px;
+    color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+
+
+}
+
+@media (max-width: 650px) {
+
+
+
+  .feature-item {
+    flex: 1;
+    background-color:#5c67f2;
+    padding: 0.5rem;
+    border-radius: 12px;
+    color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .fullscreen-hero {
+    min-height: 100vh;
+    background-image:url('../img/fundo1.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 70px 2rem 2rem; /* Inclui padding-top para a navbar fixa */
+    position: relative;
+    margin-top:105px ;
+    top: 100px;
+  }
+
+}
+
+@media (max-width: 638px) {
+
+
+
+  .feature-item {
+    flex: 1;
+    background-color:#5c67f2;
+    padding: 0.5rem;
+    border-radius: 12px;
+    color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .fullscreen-hero {
+    min-height: 100vh;
+    background-image:url('../img/fundo1.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 70px 2rem 2rem; /* Inclui padding-top para a navbar fixa */
+    position: relative;
+    margin-top:105px ;
+    top: 115px;
+  }
+
+}
+
+@media (max-width: 636px) {
+
+  .features-container h2{
+    margin-top: 80px;
+  }
+
+  .feature-item {
+    flex: 1;
+    background-color:#5c67f2;
+    padding: 0.5rem;
+    border-radius: 12px;
+    color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .fullscreen-hero {
+    min-height: 100vh;
+    background-image:url('../img/fundo1.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 70px 2rem 2rem; /* Inclui padding-top para a navbar fixa */
+    position: relative;
+    margin-top:105px ;
+    top: 120px;
+  }
+
+}
