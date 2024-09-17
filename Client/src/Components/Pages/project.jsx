@@ -1,28 +1,47 @@
 import React, { useState } from 'react';
 import './developer.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { createProject } from '../../services/projectService';
+import Swal from 'sweetalert2';
 
-export default function Developer() {
-  const [formData, setFormData] = useState({
-    name: '',
-    skills: '',
-    info: '',
-    education: '',
-    contact: '',
-  });
-
-  // Função para lidar com mudanças nos campos do formulário
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
+export default function project() {
+  const [name, setName] = useState('');
+  const [value, setValue] = useState('');
+  const [info, setInfo] = useState('');
+  const [contact, setContact] = useState('');
 
   // Função para enviar o formulário
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Data Submitted:', formData);
-    // Adicionar lógica para enviar os dados ao backend
+    try {
+      // const formData = new FormData();
+      // formData.append('name', name);
+      // formData.append('description', description);
+      // formData.append('capacity', capacity);
+      // formData.append('location', location);
+      // formData.append('photo', photo); // Adiciona o arquivo de imagem ao FormData
+      // formData.append('hourlyRate', hourlyRate);
+      // await createProduct(formData);
+      // await createPaymentCondition(name, description);
+
+      const formData = {
+        name,
+        value,
+        info,
+        contact,
+      };
+
+      console.log('Front', formData);
+
+      await createProject(formData);
+      Swal.fire('Sucesso', 'Projeto cadastrado com sucesso!', 'success');
+      // Limpar o estado após o envio
+      setName('');
+      setValue('');
+      setInfo('');
+      setContact('');
+    } catch (error) {
+      Swal.fire('Erro', 'Erro ao cadastrar projeto', 'error');
+    }
   };
 
   return (
@@ -42,48 +61,38 @@ export default function Developer() {
 
       {/* Formulário de Registro */}
       <div className="dregister-container">
-      
         <form onSubmit={handleSubmit} className="dregister-form">
-        <h2>Registrar projeto</h2>
+          <h2>Registrar projeto</h2>
           <label htmlFor="name">Nome do projeto:</label>
           <input
             type="text"
             id="name"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Digite o nome do projeto..."
             required
           />
-          <label htmlFor="name">Nome do cliente:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Digite nome do cliente"
-            required
-          />
 
-          <label htmlFor="skills">volor a pagar:</label>
+          <label htmlFor="value">Valor a pagar:</label>
           <input
             type="text"
-            id="skills"
-            name="skills"
-            value={formData.skills}
-            onChange={handleChange}
-            placeholder="digite seu seu orçamento"
+            id="value"
+            name="value"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            placeholder="Digite seu orçamento"
             required
           />
 
           <label htmlFor="info">Informações Adicionais:</label>
           <textarea
-           type="info"
+            style={{ resize: 'none' }}
+            type="text"
             id="info"
             name="info"
-            value={formData.info}
-            onChange={handleChange}
+            value={info}
+            onChange={(e) => setInfo(e.target.value)}
             placeholder="Adicione informações relevantes sobre o projeto"
             required
           />
@@ -93,8 +102,8 @@ export default function Developer() {
             type="text"
             id="contact"
             name="contact"
-            value={formData.contact}
-            onChange={handleChange}
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
             placeholder="Digite seu e-mail ou telefone"
             required
           />

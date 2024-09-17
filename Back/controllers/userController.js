@@ -2,8 +2,6 @@ const { User } = require('../models');
 
 exports.getUsers = async (req, res) => {
   try {
-    console.log("entrou aqui getUsers");
-    console.log("params:", req.params);
     const users = await User.findAll();
     res.status(200).json(users);
   } catch (error) {

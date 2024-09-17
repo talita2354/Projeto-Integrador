@@ -34,32 +34,32 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-// Associations
-db.User.associate = (models) => {
-  db.User.hasMany(models.Reservation, { foreignKey: 'userId' });
-};
+// // Associations
+// db.User.associate = (models) => {
+//   db.User.hasMany(models.Projects, { foreignKey: 'userId' });
+// };
 
-db.Product.associate = (models) => {
-  db.Product.belongsToMany(models.Reservation, {
-    through: models.ReservationProducts,
-    foreignKey: 'productId',
-    otherKey: 'reservationId',
-  });
-};
+// db.User.associate = (models) => {
+//   db.User.hasMany(models.Developer, { foreignKey: 'userId' });
+// };
 
-db.Reservation.associate = (models) => {
-  db.Reservation.belongsTo(models.User, { foreignKey: 'userId' });
-  db.Reservation.belongsTo(models.PaymentCondition, { foreignKey: 'paymentConditionId' });
-  db.Reservation.belongsToMany(models.Product, {
-    through: models.ReservationProducts,
-    foreignKey: 'reservationId',
-    otherKey: 'productId',
-  });
-};
+// db.Project.associate = (models) => {
+//   db.Project.belongsToMany(models.Reservation, {
+//     through: models.Projects,
+//     foreignKey: 'projectId',
+    
+//   });
+// };
 
-db.PaymentCondition.associate = (models) => {
-  db.PaymentCondition.hasMany(models.Reservation, { foreignKey: 'paymentConditionId' });
-};
+// db.Developer.associate = (models) => {
+//   db.Developer.belongsToMany(models.Reservation, {
+//     through: models.Developers,
+//     foreignKey: 'developerId',
+    
+//   });
+// };
+
+
 
 sequelize.sync({ alter: true })
   .then(() => {

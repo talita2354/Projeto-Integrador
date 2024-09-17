@@ -1,29 +1,43 @@
 import React, { useState } from 'react';
 import './developer.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-
-export default function Developer() {
-  const [formData, setFormData] = useState({
-    name: '',
-    skills: '',
-    info: '',
-    education: '',
-    contact: '',
-  });
-
-  // Função para lidar com mudanças nos campos do formulário
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
+import { createDeveloper } from '../../services/developerService';
+import Swal from 'sweetalert2';
+export default function developer() {
+  const [name, setName] = useState('');
+  const [value, setValue] = useState('');
+  const [skills, setSkills] = useState('');
+  // const [info, setInfo] = useState('');
+  const [education, setEducation] = useState('');
+  const [contact, setContact] = useState('');
 
   // Função para enviar o formulário
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Data Submitted:', formData);
-    // Adicionar lógica para enviar os dados ao backend
+    try {
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('value', value);
+      formData.append('skills', skills);
+      // formData.append('info', info);
+      formData.append('education', education);
+      formData.append('contact', contact);
+
+      console.log(formData);
+
+      await createDeveloper(formData);
+      Swal.fire('Sucesso', 'Desenvolvedor cadastrado com sucesso!', 'success');
+      // Limpar o estado após o envio
+      setName('');
+      setValue('');
+      setSkills('');
+      // setInfo('');
+      setEducation((''));
+      setContact('');
+    } catch (error) {
+      Swal.fire('Erro', 'Erro ao cadastrar Desenvolvedor', 'error');
+    }
   };
+
 
   return (
     <div className="developer-register">
@@ -50,8 +64,8 @@ export default function Developer() {
             type="text"
             id="name"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Digite seu nome"
             required
           />
@@ -61,30 +75,31 @@ export default function Developer() {
             type="text"
             id="skills"
             name="skills"
-            value={formData.skills}
-            onChange={handleChange}
+            value={skills}
+            onChange={(e) => setSkills(e.target.value)}
             placeholder="Digite suas habilidades"
             required
           />
 
-          <label htmlFor="info">Informações Adicionais:</label>
+          {/* <label htmlFor="info">Informações Adicionais:</label>
           <textarea
-           type="info"
+            style={{ resize: 'none' }}
+            type="info"
             id="info"
             name="info"
-            value={formData.info}
-            onChange={handleChange}
-            placeholder="Adicione informações relevantes sobre você"
+            value={info}
+            onChange={(e) => setValue(e.target.value)}
+            placeholder="Adicione informações relevantes sobre o projeto"
             required
-          />
+          /> */}
 
           <label htmlFor="education">Formação:</label>
           <input
             type="text"
             id="education"
             name="education"
-            value={formData.education}
-            onChange={handleChange}
+            value={education}
+            onChange={(e) => setEducation(e.target.value)}
             placeholder="Digite sua formação acadêmica"
             required
           />
@@ -94,8 +109,8 @@ export default function Developer() {
             type="text"
             id="contact"
             name="contact"
-            value={formData.contact}
-            onChange={handleChange}
+            value={contact}
+            onChange={(e) => setContact(e.target.value)}
             placeholder="Digite seu e-mail ou telefone"
             required
           />
