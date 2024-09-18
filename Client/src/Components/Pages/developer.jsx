@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './developer.css';
 import { createDeveloper } from '../../services/developerService';
 import Swal from 'sweetalert2';
+import { logout } from './auth';
 export default function developer() {
   const [name, setName] = useState('');
   const [value, setValue] = useState('');
@@ -49,7 +50,7 @@ export default function developer() {
             <a href="/dashboard" className="nav-link">Projetos</a>
             <a href="/professional" className="nav-link">Profissional</a>
             <a href="/project" className="nav-link">Registrar projeto</a>
-            <a href="/logout" className="nav-link logout-button">Sair</a>
+            <a onClick={logout}  className="nav-link logout-button">Sair</a>
           </nav>
         </div>
       </header>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './professional.css';
-
+import { logout } from './auth';
 export default function Dashboard() {
   // Estado para controlar o modal
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function Dashboard() {
             <a href="/dashboard" className="nav-link">Projetos</a>
             <a href="professional" className="nav-link">Profissional</a>
             <a href="#" className="nav-link" onClick={openModal}>Registrar</a>
-            <a href="/logout" className="nav-link logout-button">Sair</a>
+            <a onClick={logout}  className="nav-link logout-button">Sair</a>
           </nav>
         </div>
       </header>

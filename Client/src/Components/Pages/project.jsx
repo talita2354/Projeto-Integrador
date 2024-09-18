@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './developer.css';
 import { createProject } from '../../services/projectService';
 import Swal from 'sweetalert2';
-
+import { logout } from './auth';
 export default function project() {
   const [name, setName] = useState('');
   const [value, setValue] = useState('');
@@ -45,7 +45,7 @@ export default function project() {
             <a href="/dashboard" className="nav-link">Projetos</a>
             <a href="/professional" className="nav-link">Profissional</a>
             <a href="/developer" className="nav-link">Registrar Desenvolvedor</a>
-            <a href="/logout" className="nav-link logout-button">Sair</a>
+            <a onClick={logout}  className="nav-link logout-button">Sair</a>
           </nav>
         </div>
       </header>
