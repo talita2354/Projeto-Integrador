@@ -30,8 +30,8 @@ export default function Dashboard() {
         </div>
       </header>
 
-        {/* Modal de Registro */}
-        {isModalOpen && (
+      {/* Modal de Registro */}
+      {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
             {/* Ícone de Fechar no Canto Superior Direito */}
@@ -55,17 +55,17 @@ export default function Dashboard() {
             <div className="project-card">
               <h3>Plataforma de E-commerce</h3>
               <p>Projeto de desenvolvimento full-stack para uma startup de e-commerce. Tecnologias: React, Node.js, MongoDB.</p>
-            
+
             </div>
             <div className="project-card">
               <h3>Aplicativo Mobile de Saúde</h3>
               <p>Desenvolva uma aplicação mobile para monitoramento de atividades físicas. Tecnologias: Flutter, Firebase.</p>
-            
+
             </div>
             <div className="project-card">
               <h3>Sistema de Gestão Financeira</h3>
               <p>Projeto de backend para um sistema financeiro. Tecnologias: Java, Spring Boot, MySQL.</p>
-              
+
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ const path = require('path');
 const cors = require('cors'); // Importa o pacote cors
 const db = require('./models');
 const { swaggerUi, specs } = require('./docs/swagger');
+const { METHODS } = require('http');
 
 const app = express();
 app.use(express.json());
@@ -13,7 +14,9 @@ app.use(bodyParser.json());
 
 // Configura o CORS
 const corsOptions = {
-  origin: 'http://localhost:5173', // Defina a origem permitida ou use '*' para permitir todas as origens
+  origin: 'http://localhost:5173',
+  METHODS: ['GET', 'post', 'put', 'delete'],
+  allowedHeaders: ['Content-Type'],
   optionsSuccessStatus: 200
 };
 

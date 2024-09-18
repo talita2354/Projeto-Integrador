@@ -7,7 +7,7 @@ const API_URL = 'http://localhost:3000/developer';
 export const createDeveloper = (formData) => {
   return axios.post(API_URL, formData, {
     headers: {
-      'Content-Type': 'multipart/form-data'  // Envio de formulário com dados mistos (texto e binário)
+      'Content-Type': 'application/json',
     }
   });
 };

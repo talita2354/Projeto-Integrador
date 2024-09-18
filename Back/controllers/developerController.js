@@ -2,7 +2,6 @@ const { Developer } = require('../models');
 
 exports.create = async (req, res) => {
   try {
-    console.log('Creating developer', req.body);
     const { name, value,skills ,education ,contact } = req.body;
     const developer = await Developer.create({ name, value,skills,education, contact });
     res.status(200).json(developer);

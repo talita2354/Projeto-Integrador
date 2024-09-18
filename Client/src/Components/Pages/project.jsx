@@ -13,15 +13,6 @@ export default function project() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // const formData = new FormData();
-      // formData.append('name', name);
-      // formData.append('description', description);
-      // formData.append('capacity', capacity);
-      // formData.append('location', location);
-      // formData.append('photo', photo); // Adiciona o arquivo de imagem ao FormData
-      // formData.append('hourlyRate', hourlyRate);
-      // await createProduct(formData);
-      // await createPaymentCondition(name, description);
 
       const formData = {
         name,

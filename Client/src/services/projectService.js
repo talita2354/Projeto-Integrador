@@ -8,7 +8,7 @@ export const createProject = (data) => {
   console.log(data);
   return axios.post(API_URL, data, {
     headers: {
-      'Content-Type': 'multipart/form-data'  // Envio de formulário com dados mistos (texto e binário)
+      'Content-Type': 'application/json',
     }
   });
 };
