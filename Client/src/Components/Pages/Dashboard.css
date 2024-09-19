@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
@@ -87,30 +88,23 @@ body {
 }
 
 /* Seção de Projetos */
-.projects-section {
-  padding: 4rem 2rem;
-  background-color: #f0f0f0;
-}
-
-.projects-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 50px;
-}
-
 .projects-grid {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap; /* Garantir que os elementos quebrem linha quando necessário */
+  gap: 20px; /* Espaçamento entre os cards */
+  justify-content: flex-start; /* Alinhamento dos cards à esquerda */
 }
 
 .project-card {
-  flex: 1;
-  background-color:#5c67f2;
+  background-color: #5c67f2;
   color: #ffff;
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 15px;
+  width: calc(33.33% - 20px); /* Cards ocupam 1/3 do container (ajustável) */
+  box-sizing: border-box; /* Incluir padding e bordas dentro da largura */
 }
 
 .project-card:hover {
@@ -118,39 +112,17 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.project-card h3 {
-  margin-bottom: 0.5rem;
+
+.developer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+
 
 .project-card p {
-  margin-bottom: 1rem;
+  margin-bottom: 5px;
 }
 
-.project-link {
-  text-decoration: none;
-  color: #2f2731;
-  font-weight: bold;
-}
-
-/* Seção de Perfil */
-.profile-section {
-  padding: 4rem 2rem;
-  background-color: #fff;
-  text-align: center;
-}
-
-.profile-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.profile-container h2 {
-  margin-bottom: 1rem;
-}
-
-.profile-container p {
-  margin-bottom: 0.5rem;
-}
 
 .cta-button {
   display: inline-block;

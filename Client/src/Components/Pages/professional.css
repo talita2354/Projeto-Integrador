@@ -1,64 +1,218 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Navbar fixa */
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #222;
+  z-index: 100;
+  padding: 0.7rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link,
+.logout-button {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button {
+  background-color: #e74c3c;
+}
+
+.logout-button:hover,
+.nav-link:hover {
+  background-color: #fff;
+  color: #222;
+}
+
+/* Hero Section (Dashboard) */
+.dashboard-hero {
+  height: 60vh;
+  background-color: #1d1d1d;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.dashboard-content {
+  max-width: 600px;
+}
+
+.dashboard-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.dashboard-content p {
+  font-size: 1.2rem;
+}
+
+/* Seção de Projetos */
+.developers-grid {
+  display: flex;
+  flex-wrap: wrap; /* Garantir que os elementos quebrem linha quando necessário */
+  gap: 20px; /* Espaçamento entre os cards */
+  justify-content: flex-start; /* Alinhamento dos cards à esquerda */
+}
+
+.developer-card {
+  background-color: #5c67f2;
+  color: #ffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 15px;
+  width: calc(33.33% - 20px); /* Cards ocupam 1/3 do container (ajustável) */
+  box-sizing: border-box; /* Incluir padding e bordas dentro da largura */
+  
+}
+
+.developer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.developer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.developer-card p {
+  margin-bottom: 5px;
+}
+
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+}
+
+
 /* Estilos para o Modal */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1001;
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  .modal h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .modal p {
-    margin-bottom: 1.5rem;
-  }
-  
-  .modal-options {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .modal-option-button {
-    padding: 0.75rem;
-    background-color: #3498db;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .modal-option-button:hover {
-    background-color: #2980b9;
-  }
-  
-  .modal-close-button {
-    margin-top: 1.5rem;
-    padding: 0.5rem 1rem;
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .modal-close-button:hover {
-    background-color: #c0392b;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal h2 {
+  margin-bottom: 1rem;
+}
+
+.modal p {
+  margin-bottom: 1.5rem;
+}
+
+.modal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-option-button {
+  padding: 0.75rem;
+  background-color: #5c67f2;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-option-button:hover {
+  background-color: #2980b9;
+}
+
+.modal-close-button {
+  margin-top: 1.5rem;
+  padding: 0.5rem ;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  background-color: #c0392b;
+}
+/* Ícone de fechar */
+.modal-close-icon {
+  margin-left: 320px;
+  right: 15px;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-close-icon:hover {
+  color: #e74c3c;
+}

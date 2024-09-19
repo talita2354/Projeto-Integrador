@@ -1,84 +1,95 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
+import { getAllProjects } from '../../services/projectService';
 import { logout } from './auth';
+import Swal from 'sweetalert2';
 
 export default function Dashboard() {
-  // Estado para controlar o modal
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const ProjectList = () => {
+    const [projects, setProjects] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Função para abrir o modal
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const projectResponse = await getAllProjects();
+          setProjects(projectResponse.data);
+        } catch (error) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Erro!',
+            text: 'Erro ao buscar projetos',
+          });
+        }
+      };
 
-  // Função para fechar o modal
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+      fetchData();
+    }, []);
 
-  return (
-    <div className="dashboard">
-      {/* Navbar Fixa */}
-      <header className="navbar fixed-navbar">
-        <div className="navbar-container">
-          <div className="logo">DevMatch</div>
-          <nav className="nav-links">
-            <a href="/dashboard" className="nav-link">Projetos</a>
-            <a href="professional" className="nav-link">Profissional</a>
-            <a href="#" className="nav-link" onClick={openModal}>Registrar</a>
-            <a onClick={logout} className="nav-link logout-button">Sair</a>
-          </nav>
-        </div>
-      </header>
+    // Função para abrir o modal
+    const openModal = () => {
+      setIsModalOpen(true);
+    };
 
-      {/* Modal de Registro */}
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            {/* Ícone de Fechar no Canto Superior Direito */}
-            <span className="modal-close-icon" onClick={closeModal}>&times;</span>
-            <h2>Registrar</h2>
-            <p>Escolha uma das opções abaixo para continuar:</p>
-            <div className="modal-options">
-              <a href="/developer" className="modal-option-button">Registrar Desenvolvedor</a>
-              <a href="/project" className="modal-option-button">Registrar Projeto</a>
+    // Função para fechar o modal
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+
+    return (
+      <div className="dashboard">
+        {/* Navbar Fixa */}
+        <header className="navbar fixed-navbar">
+          <div className="navbar-container">
+            <div className="logo">DevMatch</div>
+            <nav className="nav-links">
+              <a href="/dashboard" className="nav-link">Projetos</a>
+              <a href="/professional" className="nav-link">Profissional</a>
+              <a href="#" className="nav-link" onClick={openModal}>Registrar</a>
+              <a onClick={logout} className="nav-link logout-button">Sair</a>
+            </nav>
+          </div>
+        </header>
+
+        {/* Modal de Registro */}
+        {isModalOpen && (
+          <div className="modal">
+            <div className="modal-content">
+              {/* Ícone de Fechar no Canto Superior Direito */}
+              <span className="modal-close-icon" onClick={closeModal}>&times;</span>
+              <h2>Registrar</h2>
+              <p>Escolha uma das opções abaixo para continuar:</p>
+              <div className="modal-options">
+                <a href="/developer" className="modal-option-button">Registrar Desenvolvedor</a>
+                <a href="/project" className="modal-option-button">Registrar Projeto</a>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-
-      {/* Seção de Projetos Disponíveis */}
-      <section id="projects" className="projects-section">
-        <div className="projects-container">
-          <h2>Projetos Disponíveis</h2>
-          <div className="projects-grid">
-            <div className="project-card">
-              <h3>Plataforma de E-commerce</h3>
-              <p>Projeto de desenvolvimento full-stack para uma startup de e-commerce. Tecnologias: React, Node.js, MongoDB.</p>
-
-            </div>
-            <div className="project-card">
-              <h3>Aplicativo Mobile de Saúde</h3>
-              <p>Desenvolva uma aplicação mobile para monitoramento de atividades físicas. Tecnologias: Flutter, Firebase.</p>
-
-            </div>
-            <div className="project-card">
-              <h3>Sistema de Gestão Financeira</h3>
-              <p>Projeto de backend para um sistema financeiro. Tecnologias: Java, Spring Boot, MySQL.</p>
-
+        {/* Seção de Projetos */}
+        <section id="projects" className="projects-section">
+        <h2>Projetos</h2>
+          <div className="projects-container">
+           
+            <div className="projects-grid">
+              {projects.map((project) => (
+                <div className="project-card" key={project.id}>
+              
+                  <h3 className='p1'>Nome: {project.name}</h3>
+                  <p>Valor: {project.value}</p>
+                  <p>Informação: {project.info}</p>
+                  <p>Contato: {project.contact}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
+      
+      </div>
+    );
+  };
 
-
-      {/* Footer */}
-      <footer>
-        <p>&copy; 2024 DevMatch. Todos os direitos reservados.</p>
-      </footer>
-    </div>
-  );
+  return <ProjectList />;
 }
-

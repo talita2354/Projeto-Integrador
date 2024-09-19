@@ -82,17 +82,7 @@ export default function developer() {
             required
           />
 
-          {/* <label htmlFor="info">Informações Adicionais:</label>
-          <textarea
-            style={{ resize: 'none' }}
-            type="info"
-            id="info"
-            name="info"
-            value={info}
-            onChange={(e) => setValue(e.target.value)}
-            placeholder="Adicione informações relevantes sobre o projeto"
-            required
-          /> */}
+        
 
           <label htmlFor="education">Formação:</label>
           <input
