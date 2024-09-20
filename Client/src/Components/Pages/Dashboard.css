@@ -98,11 +98,11 @@ body {
 .project-card {
   background-color: #5c67f2;
   color: #ffff;
-  padding: 2rem;
+  padding: 2rem 5rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 15px;
+  margin-top: 25px;
   width: calc(33.33% - 20px); /* Cards ocupam 1/3 do container (ajustável) */
   box-sizing: border-box; /* Incluir padding e bordas dentro da largura */
 }
@@ -112,6 +112,11 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+p{
+  margin-right: 30px;
+  margin-top: 15px;
+  
+}
 
 .developer-card:hover {
   transform: translateY(-5px);

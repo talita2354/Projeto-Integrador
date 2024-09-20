@@ -152,10 +152,10 @@ body {
   }
   @media (max-width: 768px) {
     .register-container {
-      background: #fff;
+      background: #e7e5e560;
       padding: 31px;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.438);
       width: 100%;
       max-width: 400px;
       text-align: center;
@@ -164,10 +164,10 @@ body {
   }
   @media (max-width: 635px) {
     .register-container {
-      background: #fff;
+      background: #ffffff6b;
       padding: 31px;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.425);
       width: 100%;
       max-width: 200px;
       text-align: center;

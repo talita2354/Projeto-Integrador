@@ -77,7 +77,7 @@ export default function Dashboard() {
                 <div className="project-card" key={project.id}>
               
                   <h3 className='p1'>Nome: {project.name}</h3>
-                  <p>Valor: {project.value}</p>
+                  <p>Valor: R$ {project.value}</p>
                   <p>Informação: {project.info}</p>
                   <p>Contato: {project.contact}</p>
                 </div>

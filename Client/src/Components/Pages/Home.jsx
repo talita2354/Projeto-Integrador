@@ -119,6 +119,7 @@ export default function Home() {
 
             <br /><br />Vivemos em uma era de inovação tecnológica, onde o sucesso de uma empresa muitas vezes depende da qualidade de seu time de desenvolvimento. Sabemos que encontrar o desenvolvedor ideal, com o conjunto de habilidades certo e que se alinhe com os objetivos e cultura da empresa, pode ser um grande desafio. Foi exatamente para resolver essa dor que a Dev Match foi criada.
             <br /><br /> A Dev Match conta com uma dinâmica simples: você pode se registrar como desenvolvedor ou cadastrar um projeto. Nas páginas da plataforma, você poderá buscar exatamente o que procura. Se houver um match entre o desenvolvedor e o projeto, você terá acesso ao contato para iniciar a comunicação.
+            <br /><br />LEMBRE-SE: O DevMacht apenasuma plataforma para aproximar osprogramadores e contratantes, não uma plataforma de emprego
           </p>
         </div>
       </section>
